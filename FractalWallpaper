@@ -1,0 +1,25 @@
+import turtle
+
+SpeedT = turtle.Turtle()
+
+SpeedT.speed(10)
+SpeedT.getscreen().bgcolor("black")
+SpeedT.color("purple")
+
+SpeedT.penup()
+
+SpeedT.goto((-200, 100))
+SpeedT.pendown()
+
+def star(turtle, size):
+    if size <= 10:
+        return
+    else:
+        for i in range (5):
+            SpeedT.forward(size)
+            SpeedT.right(144)
+            star(turtle, size/3)
+            return
+
+star(SpeedT, 400)
+turtle.done() 
